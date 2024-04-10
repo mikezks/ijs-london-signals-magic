@@ -13,7 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(APP_ROUTES,
       withComponentInputBinding()
     ),
-    provideClientHydration(),
     provideHttpClient(
       withFetch()
     ),

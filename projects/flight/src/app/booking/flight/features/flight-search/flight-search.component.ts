@@ -3,6 +3,7 @@ import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { injectTicketsFacade } from '../../+state';
 import { Flight } from '../../logic/model/flight';
+import { FlightFilter } from '../../logic/model/flight-filter';
 import { FlightCardComponent } from '../../ui/flight-card/flight-card.component';
 import { FlightFilterComponent } from '../../ui/flight-filter/flight-filter.component';
 
@@ -22,8 +23,8 @@ export class FlightSearchComponent {
   private ticketsFacade = injectTicketsFacade();
 
   protected filter = signal({
-    from: 'Hamburg',
-    to: 'Graz',
+    from: 'Paris',
+    to: 'London',
     urgent: false
   });
   protected basket = signal<Record<number, boolean>>({
@@ -32,7 +33,9 @@ export class FlightSearchComponent {
   });
   protected flights = this.ticketsFacade.flights;
 
-  protected search(): void {
+  protected search(filter: FlightFilter): void {
+    this.filter.set(filter);
+
     if (!this.filter().from || !this.filter().to) {
       return;
     }

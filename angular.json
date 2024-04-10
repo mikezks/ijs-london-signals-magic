@@ -37,12 +37,7 @@
               "@angular-architects/paper-design/assets/css/bootstrap.css",
               "projects/flight/src/styles.scss"
             ],
-            "scripts": [],
-            "server": "projects/flight/src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "projects/flight/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -143,12 +138,7 @@
             "styles": [
               "projects/flight-legacy/src/styles.scss"
             ],
-            "scripts": [],
-            "server": "projects/flight-legacy/src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "projects/flight-legacy/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
